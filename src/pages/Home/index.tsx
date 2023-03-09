@@ -7,6 +7,7 @@ import Banner from './components/Banner';
 // import { useAppDispatch, useAppSelector } from '../../hooks/useStateHook';
 // import { shallowEqual } from 'react-redux';
 import useBannerService from '../../hooks/useBannerService';
+import ChartBanner from './components/Banner/ChartBanner';
 
 const Home = () => {
   const { fetchBanner, bannerState } = useBannerService();

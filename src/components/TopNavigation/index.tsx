@@ -73,7 +73,8 @@ const TopNavigation = () => {
               <div className="text">チャレンジ</div>
             </StyledItem>
             <StyledItem>
-              <img src={iconInfo} alt="icon-info" />
+              {/* <img src={iconInfo} alt="icon-info" /> */}
+              <img src={require('../../assets/TopNavigation/icon_menu.svg')} alt="icon-info" />
               <div className="text">お知らせ</div>
             </StyledItem>
           </div>

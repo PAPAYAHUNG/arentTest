@@ -24,10 +24,21 @@ export const THEME = {
    
     },
     style: {
+   
       xlHeader: css` //ok
         font-weight: 300;
         font-size: 32px;
         line-height: 46px;
+      `,
+        l3Header: css` // ok
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 38px;
+      `,
+        l2Header: css` // ok
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
       `,
       lHeader: css` // ok
         font-weight: 300;

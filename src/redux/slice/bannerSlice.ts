@@ -4,13 +4,13 @@ import { API_URL } from '../../constants/api';
 
 const sliceName = 'banner';
 
-interface LineSliceProps {
+export interface BannerSliceProps {
   isLoading: boolean;
   data: any;
   error: any;
 }
 
-const INITIAL_STATE: LineSliceProps = {
+const INITIAL_STATE: BannerSliceProps = {
   isLoading: true,
   data: {},
   error: null,

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ChartBanner from '../ChartBanner';
+import ChartBanner from './ChartBanner';
 import ImageBanner from './ImageBanner';
 
 const StyledContainer = styled.div`

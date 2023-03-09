@@ -1,11 +1,27 @@
-
 {
   "imageBanner": {
-    "url": "../assets/images/d01.jpg",
+    "url": "/assets/images/d01.jpg",
     "percentage": {
       "current": 5,
       "total": 21,
       "percent": 75
     }
+  },
+  "chartBanner": {
+    "labels": ["6月", "7月", "8月", "9月", "10月", "11月", "12月", "1月", "2月", "3月", "5月"],
+    "datasets": [
+      {
+        "label": "Dataset 1",
+        "data": [1000, 1200, 700, 900, 800, 600, 500, 300, 200, 400, 500, 800],
+        "borderColor": "rgb(255, 99, 132)",
+        "backgroundColor": "rgba(255, 99, 132, 0.5)"
+      },
+      {
+        "label": "Dataset 2",
+        "data": [1000, 800, 800, 600, 650, 500, 450, 300, 250, 100, 80, 10],
+        "borderColor": "rgb(53, 162, 235)",
+        "backgroundColor": "rgba(53, 162, 235, 0.5)"
+      }
+    ]
   }
 }
