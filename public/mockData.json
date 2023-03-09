@@ -1,0 +1,11 @@
+
+{
+  "imageBanner": {
+    "url": "../assets/images/d01.jpg",
+    "percentage": {
+      "current": 5,
+      "total": 21,
+      "percent": 75
+    }
+  }
+}
