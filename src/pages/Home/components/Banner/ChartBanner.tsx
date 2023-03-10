@@ -59,5 +59,5 @@ export const options = {
 };
 
 export default function ChartBanner({chartBanner}:any) {
-  return <Line options={options} data={chartBanner} style={{width:'100%',paddingLeft:50,paddingRight:50}}/>;
+  return <Line options={options} data={chartBanner} style={{width:'100%',paddingLeft:50,paddingRight:50, paddingTop:20}}/>;
 }

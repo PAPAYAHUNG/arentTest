@@ -1,23 +1,23 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import Footer from '../Footer';
 import TopNavigation from '../TopNavigation';
 
-
 interface ILayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-const StyledLayout = styled.div``;
+const StyledLayout = styled.div`
+`;
 
-const Layout = ({children}:ILayoutProps) => {
+const Layout = ({ children }: ILayoutProps) => {
   return (
     <StyledLayout>
-        <TopNavigation/>
-        {children}
-        <Footer/>
+      <TopNavigation />
+      {children}
+      <Footer />
     </StyledLayout>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

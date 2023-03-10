@@ -6,12 +6,16 @@ const StyledContainer = styled.div`
   font-family: ${(props) => props.theme.typo.family.hiraginoKakuGothic};
   ${(props) => props.theme.typo.style.lHeader}
   color: ${(props) => props.theme.color.light};
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  max-width: ${(props) => props.theme.metrics.breakpoints.xl};
+  max-width: ${(props) => props.theme.metrics.breakpoints.lg};
   margin: auto;
   height: 64px;
 `;

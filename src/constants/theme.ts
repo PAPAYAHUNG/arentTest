@@ -38,48 +38,18 @@ export const THEME = {
         font-size: 18px;
         line-height: 22px;
       `,
+        l1Header: css` // ok
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 26px;
+      `,
       lHeader: css` // ok
         font-weight: 300;
         font-size: 16px;
         line-height: 23px;
       `,
-      mHeader: css`
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 28px;
-      `,
-      sHeader: css`
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-      `,
-      header: css`
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-      `,
-      body: css`
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 22px;
-      `,
-      mainButtonOrLink: css`
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 22px;
-      `,
       smallButtonOrLink: css`//ok
         font-weight: 600;
-        font-size: 12px;
-        line-height: 20px;
-      `,
-      captionBold: css`
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 20px;
-      `,
-      captionRegular: css`
-        font-weight: 400;
         font-size: 12px;
         line-height: 20px;
       `,
@@ -95,7 +65,7 @@ export const THEME = {
       xs: '375px',
       sm: '576px',
       md: '768px',
-      lg: '992px',
+      lg: '960px',
       xl: '1280px',
       xxl: '1920px',
     },

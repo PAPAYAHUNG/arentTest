@@ -7,10 +7,12 @@ const sliceName = 'mealHistory';
 
 export const fetchMealHistory = createAsyncThunk(
   `${sliceName}/fetchMealHistory`,
-  async ({ isAppendList = true }: { isAppendList?: boolean }) => {
+  async ({ isAppendList = false }: { isAppendList?: boolean }) => {
     try {
       const { mealHistory: mealHistoryURL } = API_URL();
       const response = await axios.get(mealHistoryURL);
+      console.log({isAppendList});
+      
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);
@@ -20,11 +22,13 @@ export const fetchMealHistory = createAsyncThunk(
 
 interface ViewingHistoryProps {
   mealHistoryList: any;
+  total:number
   isLoading: boolean;
 }
 
 const initialState = {
   mealHistoryList: [],
+  total:0,
   isLoading: true,
 } as ViewingHistoryProps;
 
@@ -40,9 +44,10 @@ const mealHistorySlice = createSlice({
     builder.addCase(fetchMealHistory.fulfilled, (state, { payload }) => {
       const { data, isAppendList }:any = payload;
       state.isLoading = false;
+      state.total = data?.total;
       // If the mealHistoryList already have data and the boolean flag isAppendList = true
       // then will append the list (use for browse more button)
-      state.mealHistoryList = state.mealHistoryList && isAppendList ? state.mealHistoryList?.concat(data) : data;
+      state.mealHistoryList = state.mealHistoryList && isAppendList ? state.mealHistoryList?.concat(data?.meals) : data?.meals;
     });
 
     builder.addCase(fetchMealHistory.rejected, (state) => {

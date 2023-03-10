@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 import styled from "styled-components/macro";
 
 import logo from '../../assets/TopNavigation/logo.svg';
@@ -15,7 +14,7 @@ const StyledContainer = styled.div`
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: ${(props) => props.theme.metrics.breakpoints.xl};
+  max-width: ${(props) => props.theme.metrics.breakpoints.lg};
   margin: auto;
   height: 64px;
 `;

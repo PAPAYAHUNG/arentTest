@@ -45,6 +45,33 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-Note:
+
+
+
+### Problem and solution
+Problem: 
+As a user who struggled with weight and heath issues, I wanted to track my progress on a personalized nutrition plan.
+
+User Story:
+As a user following a personalized nutrition plan. I want to track my diet rate to monitor my progress towards achieving my goal weight.
+
+Acceptance Criteria:
+Create a custom field in to track diet rate (percentage of days following the nutrition plan).
+Create a custom field in to track my Body fat percentage .
+Create a custom field in to see the histories of meal that User consume.
+Monitor my progress towards achieving my goal weight based on my diet rate trend all in one.
+
+
+
+
+Technical Note:
 ## Using import styled from "styled-components/macro";
 Due to this app is using create-react-app, so we need to use [import styled from "styled-components/macro"] instead of [import styled from "styled-components/macro"] to display the component name on the devtool for debuging easily.
+
+## Using react-lazy-load-image-component to optimize image loading performance
+
+## Using nanoid to generate unique string ID for JavaScript in somecase we don't have uniqe key.
+
+#For the Browsemore button, it should be shown only when the number of listing < total remained meals
+
+#For the Back To Top button, to keep user at the page more longer. The logic should be, it will be hide, till the user want to scroll up. Need to find the logic to make it.

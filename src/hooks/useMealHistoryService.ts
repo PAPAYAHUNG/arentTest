@@ -8,10 +8,11 @@ const useMealHistoryService = () => {
 
   //  Selectors
   const mealHistoryState = useAppSelector((state) => state.mealHistory, shallowEqual);
+console.log({mealHistoryState});
 
   // Dispatch Function
-  const fetchMealHistory = useCallback(() => {
-    dispatch(mealHistoryAction.fetchMealHistory({ isAppendList: false }));
+  const fetchMealHistory = useCallback((isAppendList:{isAppendList?:boolean}) => {
+    dispatch(mealHistoryAction.fetchMealHistory(isAppendList));
   }, [dispatch]);
 
   return {
