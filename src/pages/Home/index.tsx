@@ -7,24 +7,27 @@ import Banner from './components/Banner';
 // import { useAppDispatch, useAppSelector } from '../../hooks/useStateHook';
 // import { shallowEqual } from 'react-redux';
 import useBannerService from '../../hooks/useBannerService';
-import ChartBanner from './components/Banner/ChartBanner';
+import HexZone from './components/HexZone';
+import useMealHistoryService from '../../hooks/useMealHistoryService';
+import Listing from '../../components/Listing';
 
 const Home = () => {
   const { fetchBanner, bannerState } = useBannerService();
+  const { fetchMealHistory, mealHistoryState } = useMealHistoryService();
 
-
-  // const dispatch = useAppDispatch()
   useEffect(() => {
     fetchBanner()
+    fetchMealHistory()
   }, []);
 
-  // const viewingHistoryState = useAppSelector((state) => state.banner, shallowEqual);
-
   console.log({bannerState});
+  console.log({mealHistoryState});
 
   return (
     <Layout>
       <Banner bannerState={bannerState} />
+      <HexZone/>
+      <Listing/>
     </Layout>
   );
 };

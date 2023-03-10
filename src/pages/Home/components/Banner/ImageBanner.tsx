@@ -9,7 +9,6 @@ const StyledContainer = styled.div`
   position: relative;
   font-family: ${(props) => props.theme.typo.family.inter};
 
-
   img {
     width: 100%;
     height: 100%;
@@ -30,8 +29,6 @@ const StyledPercentage = styled.div`
   transform: translate(-50%, -50%);
   color: ${(props) => props.theme.color.light};
 
-
-
   .progress-status {
     position: absolute;
     top: 50%;
@@ -39,13 +36,12 @@ const StyledPercentage = styled.div`
     transform: translate(-50%, -50%);
     align-items: baseline;
 
-    .portion{
+    .portion {
       ${(props) => props.theme.typo.style.l2Header}
       white-space: nowrap;
-
     }
 
-    .percent{
+    .percent {
       ${(props) => props.theme.typo.style.l3Header}
       white-space: nowrap;
       margin-left: 4px;
@@ -53,17 +49,14 @@ const StyledPercentage = styled.div`
   }
 
   .ant-progress-inner {
-    width: 181px!important;
-    height: 181px!important;
+    width: 181px !important;
+    height: 181px !important;
   }
-
-
 `;
 
 const ImageBanner = ({ data }: any) => {
   const { url, percentage } = data || {};
   const { current, total, percent } = percentage || {};
-  console.log({ url });
 
   return (
     <StyledContainer>

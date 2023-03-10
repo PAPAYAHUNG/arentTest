@@ -18,13 +18,6 @@ const INITIAL_STATE: BannerSliceProps = {
 
 export const fetchBanner = createAsyncThunk(`${sliceName}/fetchBanner`, async () => {
   const { banner: bannerURL } = API_URL();
-  // In reality I will fetch the data with the API like below
-  // const response = await axios.get(bannerURL);
-
-  // In this test I will fetch the data from JSON
-
-  console.log({bannerURL});
-  
   const response = await axios.get(bannerURL);
   return response?.data
 });

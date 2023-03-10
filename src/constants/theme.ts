@@ -21,10 +21,8 @@ export const THEME = {
     family: {
       hiraginoKakuGothic: HIRAGINO_KAKU_GOTHIC,
       inter: INTER,
-   
     },
     style: {
-   
       xlHeader: css` //ok
         font-weight: 300;
         font-size: 32px;
