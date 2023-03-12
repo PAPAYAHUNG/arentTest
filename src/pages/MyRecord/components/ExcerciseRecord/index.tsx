@@ -62,16 +62,19 @@ const StyledExcercise = styled(Row)`
   /* width */
   ::-webkit-scrollbar {
     width: 6px;
+    border-radius: 10px;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
     background:${(props) => props.theme.color.gray400};
+    border-radius: 10px;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background:${(props) => props.theme.color.primary300};
+    border-radius: 10px;
   }
 
   /* Handle on hover */

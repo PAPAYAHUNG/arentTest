@@ -1,14 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Layout from '../../components/Layout';
-import Listing from '../../components/Listing';
-import BrowseMoreButton from '../../components/BrowseMoreButton';
-import BackToTop from '../../components/BackToTop';
-import BodyRecord from './components/BodyRecord';
-import useMyRecordService from '../../hooks/useMyRecordService';
-import BodyFatChart from './components/BodyFatChart';
-import ExcerciseRecord from './components/ExcerciseRecord';
-import DiaryCard from './components/DiaryCard';
+import {DiaryCard,ExcerciseRecord, BodyFatChart,BodyRecord} from './components';
+import { BackToTop,BrowseMoreButton,Layout,Listing } from '../../components';
+import { useMyRecordService } from '../../hooks';
 
 const StyledContainer = styled.div`
   max-width: ${(props) => props.theme.metrics.breakpoints.lg};

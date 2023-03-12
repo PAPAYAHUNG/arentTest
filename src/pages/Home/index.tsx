@@ -1,15 +1,8 @@
 import React, { useEffect } from 'react';
-
-import Layout from '../../components/Layout';
-import Banner from './components/Banner';
-import useBannerService from '../../hooks/useBannerService';
-import HexZone from './components/HexZone';
-import useMealHistoryService from '../../hooks/useMealHistoryService';
-import Listing from '../../components/Listing';
 import styled from 'styled-components';
-import BrowseMoreButton from '../../components/BrowseMoreButton';
-import BackToTop from '../../components/BackToTop';
-import MealCard from './components/MealCard';
+import { Layout, Listing, BrowseMoreButton, BackToTop } from '../../components';
+import { useBannerService, useMealHistoryService } from '../../hooks';
+import { MealCard, HexZone, Banner } from './components';
 
 const StyledSubContainer = styled.div`
   max-width: ${(props) => props.theme.metrics.breakpoints.lg};
@@ -43,16 +36,16 @@ const Home = () => {
           listItems={mealHistoryState?.mealHistoryList}
           isLoading={mealHistoryState?.isLoading}
           Component={MealCard}
-          marginBottom={"28px"}
+          marginBottom={'28px'}
         />
-         
+
         <BrowseMoreButton
           onBrowseMoreClick={onBrowseMoreClick}
           hasBrowseMoreButton={hasBrowseMoreButton}
           isLoading={isLoading}
           content="記録をもっと見る"
         />
-        
+
         <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
       </StyledSubContainer>
     </Layout>

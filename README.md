@@ -1,77 +1,57 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### HEALTH APP
 
-## Available Scripts
+## Description
+This project is a healthcare application that helps users track their fitness progress by monitoring their achievement rate, body fat percentage, meal history, exercise record, and diary.
 
-In the project directory, you can run:
+## Problem
+Many fitness tracking applications are too complex and overwhelming, making it difficult for users to set and achieve their fitness goals. We wanted to create a simple and user-friendly fitness tracking application that focuses on the essentials.
 
-### `yarn start`
+## Solution
+Our fitness tracking application allows users to monitor their achievement rate, body fat percentage, meal history, exercise record, and diary. It has a simple and intuitive interface that makes it easy to use. Users can set fitness goals, log meals and exercise, track their progress, and view graphs and charts to visualize their data.
+The application is built using React as framework for building the UI.
+To handle state management we use Redux for handling those.
+For Building the Graph chart, we use 3rd library react-chartjs-2 for implemening the chart as it stability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Operation Verification Procedure
+To verify that the application is working correctly, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Setup project
+1. Clone the repository to your local machine.
+2. Install the dependencies by running `yarn`.
+3. Add the ENV file:
+    REACT_APP_PUBLIC_APP_ENV=staging
+    REACT_APP_PUBLIC_ARENT_DOMAIN=http://localhost:3000
+3. Start the application by running `yarn start`.
+Open your web browser and go to http://localhost:3000.
 
-### `yarn test`
+# Testing App working flow
+At TOP PAGE:
+View your achievement rate.
+View your body fat percentage .
+View your Meal history .
+- For the browsemore button of history: Will appear when the showing list is not shown full list. 
+- For the Back to Top button: to keep user at the page more longer. The logic should be, it will be hide, untill the user want to scroll up.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At MY RECORD PAGE:
+View your body fat percentage .
+View your Exercise record .
+View your Diary record .
+- For the browsemore button of history: Will appear when the showing list is not shown full list. 
+- For the Back to Top button: to keep user at the page more longer. The logic should be, it will be hide, untill the user want to scroll up.
 
-### `yarn build`
+At COLUMN PAGE:
+View your Recommend items.
+View your recommended meals .
+- For the browsemore button of history: Will appear when the showing list is not shown full list. 
+- For the Back to Top button: to keep user at the page more longer. The logic should be, it will be hide, untill the user want to scroll up.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-
-
-### Problem and solution
-Problem: 
-As a user who struggled with weight and heath issues, I wanted to track my progress on a personalized nutrition plan.
-
-User Story:
-As a user following a personalized nutrition plan. I want to track my diet rate to monitor my progress towards achieving my goal weight.
-
-Acceptance Criteria:
-Create a custom field in to track diet rate (percentage of days following the nutrition plan).
-Create a custom field in to track my Body fat percentage .
-Create a custom field in to see the histories of meal that User consume.
-Monitor my progress towards achieving my goal weight based on my diet rate trend all in one.
+If all of these steps completed successfully, the application is working correctly.
 
 
-
-
-Technical Note:
+### Technical Note:
 ## Using import styled from "styled-components/macro";
 Due to this app is using create-react-app, so we need to use [import styled from "styled-components/macro"] instead of [import styled from "styled-components/macro"] to display the component name on the devtool for debuging easily.
 
 ## Using react-lazy-load-image-component to optimize image loading performance
 
-## Using nanoid to generate unique string ID for JavaScript in somecase we don't have uniqe key.
-
-#For the Browsemore button, it should be shown only when the number of listing < total remained meals
-
-#For the Back To Top button, to keep user at the page more longer. The logic should be, it will be hide, till the user want to scroll up. Need to find the logic to make it.

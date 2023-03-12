@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Layout from '../../components/Layout';
-import Listing from '../../components/Listing';
-import BrowseMoreButton from '../../components/BrowseMoreButton';
-import BackToTop from '../../components/BackToTop';
-import RecommendItems from './Components/RecommendItems';
-import useColumnService from '../../hooks/useColumnService';
-import ColumnCard from './Components/ColumnCard';
+import { ColumnCard,RecommendItems } from './Components';
+import { useColumnService } from '../../hooks';
+import { BackToTop,BrowseMoreButton,Layout,Listing } from '../../components';
 
 const StyledContainer = styled.div`
   max-width: ${(props) => props.theme.metrics.breakpoints.lg};
