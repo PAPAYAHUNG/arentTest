@@ -18,7 +18,6 @@ const StyledContainer = styled.div`
   .progress-status {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
   }
 `;
 
@@ -48,10 +47,6 @@ const StyledPercentage = styled.div`
     }
   }
 
-  .ant-progress-inner {
-    width: 181px !important;
-    height: 181px !important;
-  }
 `;
 
 const ImageBanner = ({ data }: any) => {
@@ -62,7 +57,7 @@ const ImageBanner = ({ data }: any) => {
     <StyledContainer>
       <img src={getStaticCDN(url)} alt="banner" />
       <StyledPercentage>
-        <Progress type="circle" showInfo={false} percent={80} strokeWidth={2} strokeColor={'#FFFFFF'} />
+        <Progress type="circle" showInfo={false} percent={80} size={181} strokeWidth={2} strokeColor={'#FFFFFF'} />
         <div className="progress-status">
           <div className="portion">{`${current} /${total}`}</div>
           <div className="percent">{`${percent}%`}</div>

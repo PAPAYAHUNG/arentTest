@@ -1,8 +1,7 @@
 import { css } from 'styled-components';
 
-export const HIRAGINO_KAKU_GOTHIC=  "'Noto Sans JP', sans-serif;"
-export const INTER = "'Inter', sans-serif;"
-
+export const HIRAGINO_KAKU_GOTHIC = "'Noto Sans JP', sans-serif;";
+export const INTER = "'Inter', sans-serif;";
 
 export const THEME = {
   color: {
@@ -15,7 +14,7 @@ export const THEME = {
     dark600: '#2E2E2E',
     dark500: '#414141',
     gray400: '#777777',
-  
+    borderGray: '#707070',
   },
   typo: {
     family: {
@@ -23,37 +22,62 @@ export const THEME = {
       inter: INTER,
     },
     style: {
-      xlHeader: css` //ok
+      xlHeader: css`
         font-weight: 300;
         font-size: 32px;
         line-height: 46px;
       `,
-        l3Header: css` // ok
+      l3Header: css`
         font-weight: 400;
         font-size: 25px;
-        line-height: 38px;
+        line-height: 30px;
       `,
-        l2Header: css` // ok
+      l4Header: css`
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+      `,
+      l2Header: css`
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
       `,
-        l1Header: css` // ok
+      l1Header: css`
         font-weight: 300;
         font-size: 18px;
         line-height: 26px;
       `,
-      lHeader: css` // ok
+      lHeader: css`
         font-weight: 300;
         font-size: 16px;
         line-height: 23px;
       `,
-      smallButtonOrLink: css`//ok
+      small3ButtonOrLink: css`
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 22px;
+      `,
+      small2ButtonOrLink: css`
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+      `,
+      small1ButtonOrLink: css`
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+      `,
+      smallButtonOrLink: css`
         font-weight: 600;
         font-size: 12px;
         line-height: 20px;
       `,
-      label: css` // ok
+      label1: css`
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 17px;
+      `,
+      label: css`
         font-weight: 300;
         font-size: 12px;
         line-height: 20px;

@@ -10,6 +10,7 @@ import Listing from '../../components/Listing';
 import styled from 'styled-components';
 import BrowseMoreButton from '../../components/BrowseMoreButton';
 import BackToTop from '../../components/BackToTop';
+import MealCard from './components/MealCard';
 
 const StyledSubContainer = styled.div`
   max-width: ${(props) => props.theme.metrics.breakpoints.lg};
@@ -25,12 +26,14 @@ const Home = () => {
     fetchMealHistory({ isAppendList: false });
   }, []);
 
-  console.log({ bannerState });
-  console.log({ mealHistoryState });
+  // console.log({ bannerState });
+  // console.log({ mealHistoryState });
 
   const onBrowseMoreClick = () => {
     fetchMealHistory({ isAppendList: true });
   };
+
+  if (!mealHistoryList.length) return null;
 
   const hasBrowseMoreButton = !isLoading && mealHistoryList.length < total;
   return (
@@ -38,13 +41,18 @@ const Home = () => {
       <Banner bannerState={bannerState} />
       <StyledSubContainer>
         <HexZone />
-        <Listing data={mealHistoryState} />
+        <Listing
+          listItems={mealHistoryState?.mealHistoryList}
+          isLoading={mealHistoryState?.isLoading}
+          Component={MealCard}
+        />
+         
         <BrowseMoreButton
           onBrowseMoreClick={onBrowseMoreClick}
           hasBrowseMoreButton={hasBrowseMoreButton}
           isLoading={isLoading}
         />
-        <BackToTop offsetBottom={'528px'} offsetRight={'96px'}/>
+        <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
       </StyledSubContainer>
     </Layout>
   );

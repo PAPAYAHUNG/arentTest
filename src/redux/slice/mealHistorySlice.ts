@@ -12,7 +12,6 @@ export const fetchMealHistory = createAsyncThunk(
       const { mealHistory: mealHistoryURL } = API_URL();
       const response = await axios.get(mealHistoryURL);
       console.log({isAppendList});
-      
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);
@@ -23,6 +22,7 @@ export const fetchMealHistory = createAsyncThunk(
 interface ViewingHistoryProps {
   mealHistoryList: any;
   total:number
+  notification:number
   isLoading: boolean;
 }
 
@@ -30,6 +30,7 @@ const initialState = {
   mealHistoryList: [],
   total:0,
   isLoading: true,
+  notification:0
 } as ViewingHistoryProps;
 
 const mealHistorySlice = createSlice({
@@ -45,6 +46,7 @@ const mealHistorySlice = createSlice({
       const { data, isAppendList }:any = payload;
       state.isLoading = false;
       state.total = data?.total;
+      state.notification = data?.notification;
       // If the mealHistoryList already have data and the boolean flag isAppendList = true
       // then will append the list (use for browse more button)
       state.mealHistoryList = state.mealHistoryList && isAppendList ? state.mealHistoryList?.concat(data?.meals) : data?.meals;

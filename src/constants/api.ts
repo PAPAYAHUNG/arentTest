@@ -6,5 +6,6 @@ export const API_URL = () => {
   return {
     banner: `${baseUrl}/mockDataBanner.json`,
     mealHistory: `${baseUrl}/mockDataMealHistory.json`,
+    myRecord: `${baseUrl}/mockDataMyRecord.json`,
   };
 };

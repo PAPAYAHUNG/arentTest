@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import dayjs from 'dayjs';
-import { getStaticCDN } from '../../utils/utils';
+import { getStaticCDN } from '../../../../utils/utils';
+import { useNavigate } from 'react-router-dom';
 
 const StyledContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
+   width: 234px;
+  height: 234px;
 
   .lazy-load-image {
     object-fit: cover;
@@ -31,22 +32,21 @@ const StyledContainer = styled.div`
   }
 `;
 const MealCard = ({ data }: any) => {
-  console.log({ data });
-  const { date, id, image, period, url } = data || {};
-  console.log({ date });
-
+  const { date, image, period, url } = data || {};
+  const navigate = useNavigate()
   const formatedDate = dayjs(date).format('MM.DD');
-  console.log({ formatedDate });
+
+  const handleClick =()=>{
+    navigate(url)
+  }
 
   return (
     <StyledContainer>
       <LazyLoadImage
         alt={`Meal card ${period}`}
-
         src={getStaticCDN(image)} // use normal <img> attributes as props
-  
         className="lazy-load-image"
-        key={id}
+        onClick={handleClick}
       />
       <div className="meal-badge">
         <div className="meal-bagde-text">{`${formatedDate}.${period}`}</div>
