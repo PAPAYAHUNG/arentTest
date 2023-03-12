@@ -39,7 +39,7 @@ const PopOverItem = ({
       overlayClassName="lang-popover"
       content={content}
       placement="bottomRight"
-      visible={isOpenPopOver}
+      open={isOpenPopOver}
       onOpenChange={(visible) => {
         setIsOpenPopOver(visible);
       }}

@@ -8,7 +8,7 @@ const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 32px;
   padding-top: 56px;
   padding-bottom: 56px;
 `;
@@ -50,12 +50,12 @@ const RecommendItems = () => {
   
   if(isEmpty(Cards)) return null
 
-  const renderHex = () => {
+  const renderRecommend = () => {
     return Cards?.map((card) => (
       <CardRecommend key={card?.id} data={card} handleOnclick={handleOnclick} />
     ));
   };
-  return <StyledContainer>{renderHex()}</StyledContainer>;
+  return <StyledContainer>{renderRecommend()}</StyledContainer>;
 };
 
 export default RecommendItems;

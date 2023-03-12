@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useMealHistoryService from '../../hooks/useMealHistoryService';
 import { getStaticCDN } from '../../utils/utils';
 import PopOverItem from '../PopOverItem';
@@ -92,7 +92,7 @@ const StyledMenuButton = styled.div`
 
   @media screen and (min-width: 960px) {
     margin-right: unset;
-    }
+  }
 `;
 
 const StyledItemsContainer = styled.div`
@@ -110,9 +110,11 @@ const StyledFloatSubMenu = styled.div`
   justify-content: center;
   padding-left: 32px;
   height: 72px;
+  width: 100%;
   position: relative;
   &:hover {
     cursor: pointer;
+    color: ${(props) => props.theme.color.light};
   }
 
   &:after {
@@ -129,6 +131,21 @@ const StyledFloatSubMenu = styled.div`
   }
 `;
 
+const StyledNavLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: ${(props) => props.theme.color.light};
+
+  &.active {
+    color: ${(props) => props.theme.color.primary400};
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.color.light};
+  }
+`;
 interface ItemProps {
   id: number;
   content: string | ReactNode;
@@ -137,11 +154,11 @@ interface ItemProps {
 
 const ListItem = [
   { id: 1, content: '自分の記録', url: '/myRecord' },
-  { id: 2, content: '体重グラフ', url: '' },
-  { id: 3, content: '目標', url: '' },
-  { id: 4, content: '選択中のコース', url: '' },
+  { id: 2, content: '体重グラフ', url: '/random1' },
+  { id: 3, content: '目標', url: '/random2' },
+  { id: 4, content: '選択中のコース', url: '/random3' },
   { id: 5, content: 'コラム一覧', url: '/column' },
-  { id: 6, content: '設定', url: '' },
+  { id: 6, content: '設定', url: '/random4' },
 ];
 
 const TopNavigation = () => {
@@ -155,21 +172,16 @@ const TopNavigation = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = (url: string) => {
-    navigate(url);
-  };
-
   const renderFloatSubMenu = () => (
     <StyledItemsContainer>
       {ListItem?.map((item: ItemProps) => (
-        <StyledFloatSubMenu
+        <StyledNavLink
           key={item.id}
-          onClick={() => {
-            handleClick(item.url);
-          }}
+          to={item.url}
+          className={({ isActive }) => (isActive ? 'active' : '')}
         >
-          {item.content}
-        </StyledFloatSubMenu>
+          <StyledFloatSubMenu>{item.content}</StyledFloatSubMenu>
+        </StyledNavLink>
       ))}
     </StyledItemsContainer>
   );
@@ -177,48 +189,66 @@ const TopNavigation = () => {
   return (
     <StyledContainer>
       <StyledWrapper>
-        <StyledLogo
-          onClick={() => {
-            navigate('/');
-          }}
+        <StyledNavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'active' : '')}
         >
-          <img
-            src={getStaticCDN('/Imagine/TopNavigation/logo.svg')}
-            alt="logo-heathy"
-          />
-        </StyledLogo>
+          <StyledLogo
+            onClick={() => {
+              navigate('/');
+            }}
+          >
+            <img
+              src={getStaticCDN('/Imagine/TopNavigation/logo.svg')}
+              alt="logo-heathy"
+            />
+          </StyledLogo>
+        </StyledNavLink>
         <StyledNavigator>
           <div className="sub-container">
-            <StyledItem
-              onClick={() => {
-                navigate('/myRecord');
-              }}
+            <StyledNavLink
+              to="/myRecord"
+              className={({ isActive }) => (isActive ? 'active' : '')}
             >
-              <img
-                src={getStaticCDN('/Imagine/TopNavigation/icon_memo.svg')}
-                alt="icon-memo"
-              />
-              <div className="text">自分の記録</div>
-            </StyledItem>
-            <StyledItem>
-              <img
-                src={getStaticCDN('/Imagine/TopNavigation/icon_challenge.svg')}
-                alt="icon-challenge"
-              />
-              <div className="text">チャレンジ</div>
-            </StyledItem>
-            <StyledItem>
-              <div className="noti-icon">
+              <StyledItem>
                 <img
-                  src={getStaticCDN('/Imagine/TopNavigation/icon_info.svg')}
-                  alt="icon-info"
+                  src={getStaticCDN('/Imagine/TopNavigation/icon_memo.svg')}
+                  alt="icon-memo"
                 />
-                {notification > 0 && (
-                  <div className="notification">{notification}</div>
-                )}
-              </div>
-              <div className="text">お知らせ</div>
-            </StyledItem>
+                <div className="text">自分の記録</div>
+              </StyledItem>
+            </StyledNavLink>
+            <StyledNavLink
+              to="/random1"
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <StyledItem>
+                <img
+                  src={getStaticCDN(
+                    '/Imagine/TopNavigation/icon_challenge.svg',
+                  )}
+                  alt="icon-challenge"
+                />
+                <div className="text">チャレンジ</div>
+              </StyledItem>
+            </StyledNavLink>
+            <StyledNavLink
+              to="/random2"
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
+              <StyledItem>
+                <div className="noti-icon">
+                  <img
+                    src={getStaticCDN('/Imagine/TopNavigation/icon_info.svg')}
+                    alt="icon-info"
+                  />
+                  {notification > 0 && (
+                    <div className="notification">{notification}</div>
+                  )}
+                </div>
+                <div className="text">お知らせ</div>
+              </StyledItem>
+            </StyledNavLink>
           </div>
           <PopOverItem
             content={() => renderFloatSubMenu()}

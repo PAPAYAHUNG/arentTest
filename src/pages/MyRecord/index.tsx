@@ -53,7 +53,7 @@ const MyRecord = () => {
           isLoading={isLoading}
           content="自分の日記をもっと見る"
         />
-        <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
+        <BackToTop offsetBottom={'50vh'} offsetRight={'96px'} />
       </StyledContainer>
     </Layout>
   );

@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { Spin } from 'antd';
 
 const StyledSpinWrapper = styled.div`
@@ -9,7 +9,7 @@ const StyledSpinWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 64px;
   text-align: center;
   display: flex;
   flex-direction: column;

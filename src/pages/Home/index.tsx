@@ -46,7 +46,7 @@ const Home = () => {
           content="記録をもっと見る"
         />
 
-        <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
+        <BackToTop offsetBottom={'50vh'} offsetRight={'96px'} />
       </StyledSubContainer>
     </Layout>
   );

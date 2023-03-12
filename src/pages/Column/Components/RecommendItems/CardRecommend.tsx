@@ -50,9 +50,8 @@ const StyledContainer = styled.div`
   }
 `;
 const CardRecommend = ({ data, handleOnclick }: any) => {
-  console.log('recommend data', data);
 
-  const { item, href, text, url } = data || {};
+  const { item, href, text } = data || {};
 
   return (
     <StyledContainer

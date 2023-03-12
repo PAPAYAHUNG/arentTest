@@ -12,7 +12,6 @@ export const fetchMealHistory = createAsyncThunk(
     try {
       const { mealHistory: mealHistoryURL } = API_URL();
       const response = await axios.get(mealHistoryURL);
-      console.log({isAppendList});
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);
