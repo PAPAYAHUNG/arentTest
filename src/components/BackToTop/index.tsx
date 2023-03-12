@@ -42,7 +42,7 @@ const StyledWrapper = styled.div<{
   }
 `;
 
-const backToTopIcon = getStaticCDN('/assets/images/backToTop.svg');
+const backToTopIcon = getStaticCDN('/Imagine/images/backToTop.svg');
 
 const BackToTop: React.FC<IBackToTop> = ({ offsetBottom, offsetRight }) => {
   const [visible, setVisible] = useState<boolean>(false);

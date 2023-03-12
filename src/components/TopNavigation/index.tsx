@@ -183,7 +183,7 @@ const TopNavigation = () => {
           }}
         >
           <img
-            src={getStaticCDN('/assets/TopNavigation/logo.svg')}
+            src={getStaticCDN('/Imagine/TopNavigation/logo.svg')}
             alt="logo-heathy"
           />
         </StyledLogo>
@@ -195,14 +195,14 @@ const TopNavigation = () => {
               }}
             >
               <img
-                src={getStaticCDN('/assets/TopNavigation/icon_memo.svg')}
+                src={getStaticCDN('/Imagine/TopNavigation/icon_memo.svg')}
                 alt="icon-memo"
               />
               <div className="text">自分の記録</div>
             </StyledItem>
             <StyledItem>
               <img
-                src={getStaticCDN('/assets/TopNavigation/icon_challenge.svg')}
+                src={getStaticCDN('/Imagine/TopNavigation/icon_challenge.svg')}
                 alt="icon-challenge"
               />
               <div className="text">チャレンジ</div>
@@ -210,7 +210,7 @@ const TopNavigation = () => {
             <StyledItem>
               <div className="noti-icon">
                 <img
-                  src={getStaticCDN('/assets/TopNavigation/icon_info.svg')}
+                  src={getStaticCDN('/Imagine/TopNavigation/icon_info.svg')}
                   alt="icon-info"
                 />
                 {notification > 0 && (
@@ -229,8 +229,8 @@ const TopNavigation = () => {
               <img
                 src={
                   isOpenPopOver
-                    ? getStaticCDN('/assets/TopNavigation/icon_close.svg')
-                    : getStaticCDN('/assets/TopNavigation/icon_menu.svg')
+                    ? getStaticCDN('/Imagine/TopNavigation/icon_close.svg')
+                    : getStaticCDN('/Imagine/TopNavigation/icon_menu.svg')
                 }
                 alt="icon-menu"
               />

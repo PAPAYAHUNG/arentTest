@@ -5,7 +5,7 @@
     {
       "id": 1,
       "name": "oatmeal",
-      "image": "/assets/images/m01.jpg",
+      "image": "/Imagine/images/m01.jpg",
       "url": "",
       "date": "2023-05-21",
       "period": "Morning"
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "sandwich",
-      "image": "/assets/images/l03.jpg",
+      "image": "/Imagine/images/l03.jpg",
       "url": "",
       "date": "2023-05-21",
       "period": "Lunch"
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "name": "chicken",
-      "image": "/assets/images/d01.jpg",
+      "image": "/Imagine/images/d01.jpg",
       "url": "",
       "date": "2023-05-21",
       "period": "Dinner"
@@ -29,7 +29,7 @@
     {
       "id": 4,
       "name": "chicken",
-      "image": "/assets/images/l01.jpg",
+      "image": "/Imagine/images/l01.jpg",
       "url": "",
       "date": "2023-05-21",
       "period": "Snack"
@@ -37,7 +37,7 @@
     {
       "id": 5,
       "name": "oatmeal",
-      "image": "/assets/images/column-1.jpg",
+      "image": "/Imagine/images/column-1.jpg",
       "url": "",
       "date": "2023-05-20",
       "period": "Morning"
@@ -45,7 +45,7 @@
     {
       "id": 6,
       "name": "sandwich",
-      "image": "/assets/images/l02.jpg",
+      "image": "/Imagine/images/l02.jpg",
       "url": "",
       "date": "2023-05-20",
       "period": "Lunch"
@@ -53,14 +53,14 @@
     {
       "id": 7,
       "name": "chicken",
-      "image": "/assets/images/d02.jpg",
+      "image": "/Imagine/images/d02.jpg",
       "url": "",
       "period": "Dinner"
     },
     {
       "id": 8,
       "name": "chicken",
-      "image": "/assets/images/s01.jpg",
+      "image": "/Imagine/images/s01.jpg",
       "url": "",
       "period": "Snack"
     }

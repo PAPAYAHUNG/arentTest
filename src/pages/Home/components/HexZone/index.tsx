@@ -26,22 +26,22 @@ const StyledHexItem = styled.div`
 const HexList=[
 {
     item:'morning',
-    url: '/assets/hexZone/morning.svg',
+    url: '/Imagine/hexZone/morning.svg',
     href:''
 },
 {
     item:'lunch',
-    url: '/assets/hexZone/lunch.svg',
+    url: '/Imagine/hexZone/lunch.svg',
     href:''
 },
 {
     item:'dinner',
-    url: '/assets/hexZone/dinner.svg',
+    url: '/Imagine/hexZone/dinner.svg',
     href:''
 },
 {
     item:'snack',
-    url: '/assets/hexZone/snack.svg',
+    url: '/Imagine/hexZone/snack.svg',
     href:''
 },
 ]
