@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { FC, memo } from 'react';
 import styled from 'styled-components/macro';
+import { useNavigate } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import dayjs from 'dayjs';
 import { getStaticCDN } from '../../../../utils/utils';
-import { useNavigate } from 'react-router-dom';
 
 const StyledContainer = styled.div`
   position: relative;
-   width: 234px;
+  width: 234px;
   height: 234px;
 
   .lazy-load-image {
@@ -25,20 +25,33 @@ const StyledContainer = styled.div`
     height: 32px;
     width: 120px;
     background-color: ${(props) => props.theme.color.primary300};
+    color: ${(props) => props.theme.color.light};
+    font-family: ${(props) => props.theme.typo.family.inter};
+    ${(props) => props.theme.typo.style.small2ButtonOrLink}
 
     .meal-bagde-text {
       padding-left: 5px;
     }
   }
 `;
-const MealCard = ({ data }: any) => {
+
+export interface MealCardProps {
+  id: number;
+  name: string;
+  image: string;
+  url: string;
+  date: string;
+  period: string;
+}
+
+const MealCard:FC<{data:MealCardProps}> = ({ data }) => {
   const { date, image, period, url } = data || {};
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const formatedDate = dayjs(date).format('MM.DD');
 
-  const handleClick =()=>{
-    navigate(url)
-  }
+  const handleClick = () => {
+    navigate(url);
+  };
 
   return (
     <StyledContainer>
@@ -55,4 +68,4 @@ const MealCard = ({ data }: any) => {
   );
 };
 
-export default MealCard;
+export default memo(MealCard);

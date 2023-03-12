@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/macro';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getStaticCDN } from '../../../../utils/utils';
@@ -69,7 +69,22 @@ const StyledContainer = styled.div`
     }
   }
 `;
-const CardBody = ({ data, handleOnclick }: any) => {
+
+interface CardProps {
+  id:number
+  item: string
+  url: string
+  href: string
+  text:
+   string
+}
+
+interface CardBodyProps{
+  data:CardProps
+  handleOnclick:(href:string)=>void
+}
+
+const CardBody:FC<CardBodyProps> = ({ data, handleOnclick } ) => {
   const { item, href, text, url } = data || {};
 
   return (

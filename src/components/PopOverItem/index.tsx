@@ -26,8 +26,12 @@ const OverridePopoverStyle = createGlobalStyle`
   }
 `;
 
-const PopOverItem = ({ children, content,isOpenPopOver,setIsOpenPopOver }: any) => {
-  const [isOpenSubMenu, setIsOpenSubMenu] = useState(false);
+const PopOverItem = ({
+  children,
+  content,
+  isOpenPopOver,
+  setIsOpenPopOver,
+}: any) => {
   if (!children) return null;
 
   return (
@@ -35,9 +39,9 @@ const PopOverItem = ({ children, content,isOpenPopOver,setIsOpenPopOver }: any) 
       overlayClassName="lang-popover"
       content={content}
       placement="bottomRight"
-      visible={isOpenSubMenu}
+      visible={isOpenPopOver}
       onOpenChange={(visible) => {
-        setIsOpenSubMenu(visible);
+        setIsOpenPopOver(visible);
       }}
       align={{ offset: [0, 5] }}
       trigger={'click'}

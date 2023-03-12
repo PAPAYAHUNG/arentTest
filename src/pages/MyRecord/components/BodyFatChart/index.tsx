@@ -14,6 +14,7 @@ import styled from 'styled-components/macro';
 import type { RadioChangeEvent } from 'antd';
 import { Radio } from 'antd';
 import { isEmpty } from 'lodash';
+import { DataProps } from '../../../Home/components/Banner';
 
 ChartJS.register(
   CategoryScale,
@@ -97,7 +98,7 @@ export const options = {
         color: '#FFFFFF',
         font: {
           size: 12,
-        }
+        },
       },
 
       // to remove the x-axis grid
@@ -123,7 +124,8 @@ export const options = {
     },
   },
 };
-export default function BodyFatChart({ data }: any) {
+
+const BodyFatChart = ({ data }:any) => {
   const [activePeriod, setActivePeriod] = useState('year');
 
   const ListPeriod = [
@@ -171,4 +173,6 @@ export default function BodyFatChart({ data }: any) {
       </div>
     </StyledContainer>
   );
-}
+};
+
+export default BodyFatChart;

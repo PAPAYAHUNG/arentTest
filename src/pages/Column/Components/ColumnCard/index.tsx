@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import styled from 'styled-components/macro';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import dayjs from 'dayjs';
-import { getStaticCDN } from '../../../../utils/utils';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { getStaticCDN } from '../../../../utils/utils';
 
 const StyleWrapper = styled.div`
   .description {
@@ -72,6 +71,7 @@ const ColumnCard = ({ data }: any) => {
       )),
     [supplements],
   );
+  
   return (
     <StyleWrapper>
       <StyledContainer>
@@ -94,4 +94,4 @@ const ColumnCard = ({ data }: any) => {
   );
 };
 
-export default ColumnCard;
+export default memo(ColumnCard);

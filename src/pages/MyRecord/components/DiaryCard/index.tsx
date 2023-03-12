@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { FC, memo } from 'react';
 import styled from 'styled-components/macro';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import dayjs from 'dayjs';
-import { getStaticCDN } from '../../../../utils/utils';
 
 const StyledContainer = styled.div`
   max-height: 231px;
@@ -17,15 +14,19 @@ const StyledContainer = styled.div`
     font-family: ${(props) => props.theme.typo.family.inter};
   }
 
-  .description{
+  .description {
     margin-top: 8px;
     ${(props) => props.theme.typo.style.label1}
     font-family: ${(props) => props.theme.typo.family.hiraginoKakuGothic};
   }
-
 `;
-const DiaryCard = ({ data }: any) => {
-  // console.log('diary', data);
+interface RecordProps {
+  date: string;
+  time: string;
+  text: string;
+}
+
+const DiaryCard: FC<{ data: RecordProps }> = ({ data }) => {
   const { date, text, time } = data || {};
 
   return (
@@ -42,4 +43,4 @@ const DiaryCard = ({ data }: any) => {
   );
 };
 
-export default DiaryCard;
+export default memo(DiaryCard);

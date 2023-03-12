@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
-
-import Layout from '../../components/Layout';
-
-import useBannerService from '../../hooks/useBannerService';
-import useMealHistoryService from '../../hooks/useMealHistoryService';
-import Listing from '../../components/Listing';
 import styled from 'styled-components';
+import Layout from '../../components/Layout';
+import Listing from '../../components/Listing';
 import BrowseMoreButton from '../../components/BrowseMoreButton';
 import BackToTop from '../../components/BackToTop';
 import BodyRecord from './components/BodyRecord';
@@ -28,15 +24,12 @@ const StyledHeader = styled.div`
 
 const MyRecord = () => {
   const { fetchMyRecord, myRecordState } = useMyRecordService();
-  const { myRecordList, isLoading, excerciseList, diaryRecord,totalDiary } =
+  const { isLoading, excerciseList, diaryRecord,totalDiary } =
     myRecordState || {};
-  //   const { isLoading, total, mealHistoryList,notification } = mealHistoryState || {};
+
   useEffect(() => {
     fetchMyRecord({ isAppendList: false });
   }, []);
-
-  console.log({ myRecordState });
-  //   console.log({ mealHistoryState });
 
   const renderHeader = ()=> <StyledHeader>MY DIARY</StyledHeader>
 

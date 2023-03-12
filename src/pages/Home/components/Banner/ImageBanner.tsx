@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Progress } from 'antd';
 import { getStaticCDN } from '../../../../utils/utils';
-import { Progress, Space } from 'antd';
 
 const StyledContainer = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components/macro';
 import CardBody from './CardBody';
@@ -55,4 +55,4 @@ const BodyRecord = () => {
   return <StyledContainer>{renderHex()}</StyledContainer>;
 };
 
-export default BodyRecord;
+export default memo(BodyRecord);

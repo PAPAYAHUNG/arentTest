@@ -17,9 +17,32 @@ const StyledContainer = styled.div`
   }
 `;
 
-interface BannerSliceProps {
+interface DatasetProps {
+  label: string;
+  data: number[];
+  borderColor: string;
+  backgroundColor: string;
+}
+
+interface PercentageProps {
+  current: number;
+  total: number;
+  percentage: number;
+}
+export interface DataProps {
+  chartBanner: {
+    lables: string[];
+    datasets: DatasetProps[];
+  };
+
+  imageBanner: {
+    url: string;
+    percentage: PercentageProps;
+  };
+}
+export interface BannerSliceProps {
   isLoading: boolean;
-  data: any;
+  data: DataProps;
   error: any;
 }
 const Banner = ({ bannerState }: { bannerState: BannerSliceProps }) => {
@@ -31,7 +54,13 @@ const Banner = ({ bannerState }: { bannerState: BannerSliceProps }) => {
         <Loading />
       ) : (
         <StyledContainer>
-          <div className="image-banner">{isLoading ? <p>Loading...</p> : <ImageBanner data={data?.imageBanner} />}</div>
+          <div className="image-banner">
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              <ImageBanner data={data?.imageBanner} />
+            )}
+          </div>
           <div className="chart-banner">
             <ChartBanner chartBanner={data?.chartBanner} />
           </div>

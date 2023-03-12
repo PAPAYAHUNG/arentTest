@@ -126,29 +126,25 @@ interface ItemProps {
   url: string;
 }
 
+const ListItem = [
+  { id: 1, content: '自分の記録', url: '/myRecord' },
+  { id: 2, content: '体重グラフ', url: '' },
+  { id: 3, content: '目標', url: '' },
+  { id: 4, content: '選択中のコース', url: '' },
+  { id: 5, content: 'コラム一覧', url: '/column' },
+  { id: 6, content: '設定', url: '' },
+];
+
 const TopNavigation = () => {
   const { mealHistoryState, fetchMealHistory } = useMealHistoryService();
   const { notification } = mealHistoryState || {};
   const [isOpenPopOver, setIsOpenPopOver] = useState(false);
 
-  const [isOpenSubMenu, setIsOpenSubMenu] = useState(false);
-
-  console.log({isOpenSubMenu});
-  
   useEffect(() => {
     fetchMealHistory({ isAppendList: false });
   }, []);
 
   const navigate = useNavigate();
-
-  const ListItem = [
-    { id: 1, content: '自分の記録', url: '/myRecord' },
-    { id: 2, content: '体重グラフ', url: '' },
-    { id: 3, content: '目標', url: '' },
-    { id: 4, content: '選択中のコース', url: '' },
-    { id: 5, content: 'コラム一覧', url: '/column' },
-    { id: 6, content: '設定', url: '' },
-  ];
 
   const handleClick = (url: string) => {
     navigate(url);
@@ -217,14 +213,10 @@ const TopNavigation = () => {
           </div>
           <PopOverItem
             content={() => renderFloatSubMenu()}
-            isOpenPopOver
-            setIsOpenPopOver
+            isOpenPopOver={isOpenPopOver}
+            setIsOpenPopOver={setIsOpenPopOver}
           >
-            <StyledMenuButton
-              // onClick={() => {
-              //   setIsOpenPopOver(!isOpenPopOver);
-              // }}
-            >
+            <StyledMenuButton>
               <img
                 src={
                   isOpenPopOver

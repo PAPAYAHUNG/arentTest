@@ -287,7 +287,7 @@ export const mockMyRecord = {
   },
 };
 
-const mockExcercise = {
+export const mockExcercise = {
   record: [
     {
       date: '2021.05.21',
@@ -500,7 +500,7 @@ const diary = [
   },
 ];
 
-const recommend = {
+export const column = {
   recommendList: [
     {
       date: '2021.05.17',

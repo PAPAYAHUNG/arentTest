@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import Layout from '../../components/Layout';
 import Banner from './components/Banner';
-
 import useBannerService from '../../hooks/useBannerService';
 import HexZone from './components/HexZone';
 import useMealHistoryService from '../../hooks/useMealHistoryService';
@@ -21,13 +20,11 @@ const Home = () => {
   const { fetchMealHistory, mealHistoryState } = useMealHistoryService();
 
   const { isLoading, total, mealHistoryList } = mealHistoryState || {};
+
   useEffect(() => {
     fetchBanner();
     fetchMealHistory({ isAppendList: false });
   }, []);
-
-  // console.log({ bannerState });
-  // console.log({ mealHistoryState });
 
   const onBrowseMoreClick = () => {
     fetchMealHistory({ isAppendList: true });
@@ -41,6 +38,7 @@ const Home = () => {
       <Banner bannerState={bannerState} />
       <StyledSubContainer>
         <HexZone />
+
         <Listing
           listItems={mealHistoryState?.mealHistoryList}
           isLoading={mealHistoryState?.isLoading}
@@ -54,6 +52,7 @@ const Home = () => {
           isLoading={isLoading}
           content="記録をもっと見る"
         />
+        
         <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
       </StyledSubContainer>
     </Layout>

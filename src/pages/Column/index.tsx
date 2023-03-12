@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-
 import Layout from '../../components/Layout';
 import Listing from '../../components/Listing';
 import BrowseMoreButton from '../../components/BrowseMoreButton';
@@ -36,7 +35,7 @@ const Column = () => {
           isLoading={isLoading}
           Component={ColumnCard}
           marginTop="0px"
-          marginBottom="56px"
+          marginBottom="26px"
           gutter={[8, 18]}
         />
         <BrowseMoreButton

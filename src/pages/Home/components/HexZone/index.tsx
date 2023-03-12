@@ -1,6 +1,6 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import Logger from '../../../../services/Logger';
 import { getStaticCDN } from '../../../../utils/utils';
 
 
@@ -47,12 +47,13 @@ const HexList=[
 ]
 
 const HexZone = () => {
-    const handleClick = ()=>{
-        Logger.log('Navigate action')
+    const navigate = useNavigate()
+    const handleClick = (href:string)=>{
+        navigate(href)
     }
 
     const renderHex = ()=>{
-        return HexList?.map((hex)=> <StyledHexItem key={hex.item} onClick={handleClick}>
+        return HexList?.map((hex)=> <StyledHexItem key={hex.item} onClick={()=>{handleClick(hex.href)}}>
                     <img src={getStaticCDN(hex.url)} alt={`hex-${hex.item}`}/>
             </StyledHexItem>)
        

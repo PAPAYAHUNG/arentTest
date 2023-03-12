@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { FC, useMemo} from 'react';
 
 import {
   Chart as ChartJS,
@@ -120,11 +120,20 @@ const StyledActivity = styled(Col)`
   }
 `;
 
-const ExcerciseRecord = ({ data }: any) => {
+interface ActivitiesProps {
+  activity:string
+  consume:string
+  duration:string
+}
+interface ExcerciseRecordProps {
+  date:string
+  activities: ActivitiesProps[]
+}
+const ExcerciseRecord:FC<{data:ExcerciseRecordProps}> = ({ data }) => {
   const { date, activities } = data || {};
 
   const excerciseItems = useMemo(() => {
-    return activities?.map((item: any, index: number) => (
+    return activities?.map((item: ActivitiesProps, index: number) => (
       <StyledActivity
         key={`excercise-${index}`}
         xs={{ span: 24 }}

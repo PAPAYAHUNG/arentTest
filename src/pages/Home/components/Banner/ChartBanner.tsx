@@ -33,29 +33,25 @@ export const options = {
 
   // Modify the axis by adding scales
   scales: {
-    // to remove the labels
     x: {
       ticks: {
         display: true,
         color:'#FFFFFF',
       },
 
-      // to remove the x-axis grid
       grid: {
-        // drawBorder: false,
-        // display: false,
         color: '#777777',
       },
     },
-    // to remove the y-axis labels
+
     y: {
       ticks: {
-        display: false,
+        display: false,     // to remove the y-axis labels
         beginAtZero: true,
       },
-      // to remove the y-axis grid
+     
       grid: {
-        drawBorder: false,
+        drawBorder: false,  // to remove the y-axis grid
         display: false,
       },
     },
