@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
-import { Col, Row } from 'antd';
 import styled from 'styled-components/macro';
+import { Col, Row } from 'antd';
+import { Gutter } from 'antd/es/grid/row';
 import Loading from '../Loading';
 
 const StyledColumn = styled(Col)`
@@ -18,14 +19,8 @@ const StyledWrapper = styled.div<{
 margin-top: ${props=>props.marginTop};
 margin-bottom: ${props=>props.marginBottom};
 `;
-const StyledContainer = styled.div``;
-const StyledHeader = styled.div`
-  font-family: ${(props) => props.theme.typo.family.inter};
-  ${(props) => props.theme.typo.style.l4Header}
-  font-size: 22px;
-  line-height: 27px;
-`;
 
+const StyledContainer = styled.div``;
 interface ListingProps {
   header?: string | ReactNode;
   listItems: any;
@@ -34,6 +29,7 @@ interface ListingProps {
   Component: any;
   marginTop?: string;
   marginBottom?: string;
+  gutter?: [Gutter,Gutter] //Left Gutter for X axis, Right Gutter for Y axis
 }
 const Listing = ({
   listItems,
@@ -42,7 +38,8 @@ const Listing = ({
   header,
   fullData,
   marginTop,
-  marginBottom
+  marginBottom,
+  gutter
 }: ListingProps) => {
 
   if (!Component) return null;
@@ -53,8 +50,8 @@ const Listing = ({
         <Loading />
       ) : (
         <StyledContainer>
-          {header && <StyledHeader>{header}</StyledHeader>}
-          <Row gutter={[8, 8]}>
+          {header && header}
+          <Row gutter={gutter || [8, 8]}>
             {listItems?.map((item: any, index: number) => (
               <StyledColumn
                 xs={{ span: 24 }}
@@ -80,6 +77,7 @@ Listing.defaultProps = {
   fullData: {},
   marginTop: '0px',
   marginBottom: '0px',
+  gutter:[8,8]
 };
 
 export default Listing;

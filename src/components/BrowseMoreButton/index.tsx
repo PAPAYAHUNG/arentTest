@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Spin } from 'antd';
 
@@ -9,7 +9,7 @@ const StyledSpinWrapper = styled.div`
 `;
 
 const Container = styled.div`
-  margin: 40px 0;
+  margin-bottom: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -39,10 +39,18 @@ const StyledButton = styled.div`
 
 `;
 
-const BrowseMoreButton: FC<any> = ({
+interface BrowsemoreeButtonProps {
+  onBrowseMoreClick:()=>void
+  isLoading:boolean
+  hasBrowseMoreButton:boolean
+  content:string|ReactNode
+}
+
+const BrowseMoreButton: FC<BrowsemoreeButtonProps> = ({
   onBrowseMoreClick,
   isLoading,
   hasBrowseMoreButton,
+  content
 }) => {
   if (isLoading)
     return (
@@ -55,7 +63,7 @@ const BrowseMoreButton: FC<any> = ({
     <Container>
       {hasBrowseMoreButton && (
         <StyledButton onClick={onBrowseMoreClick}>
-          記録をもっと見る
+          {content}
         </StyledButton>
       )}
     </Container>

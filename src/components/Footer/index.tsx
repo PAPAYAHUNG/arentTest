@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
 const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.color.dark500};
@@ -10,13 +10,16 @@ const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .wrapper{
+    width: ${(props) => props.theme.metrics.breakpoints.lg};
+  }
 `;
 
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   max-width: ${(props) => props.theme.metrics.breakpoints.lg};
-  margin: auto;
   height: 64px;
 `;
 
@@ -25,8 +28,8 @@ const StyledItem = styled.div`
   align-items: center;
   justify-content: center;
 
-  &:not(:first-child){
-      margin-left: 45px;
+  &:not(:first-child) {
+    margin-left: 45px;
   }
 
   a {
@@ -62,7 +65,9 @@ const Footer = () => {
 
   return (
     <StyledContainer>
-      <StyledWrapper>{dataListItems}</StyledWrapper>
+      <div className="wrapper">
+        <StyledWrapper>{dataListItems}</StyledWrapper>
+      </div>
     </StyledContainer>
   );
 };

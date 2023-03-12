@@ -45,12 +45,14 @@ const Home = () => {
           listItems={mealHistoryState?.mealHistoryList}
           isLoading={mealHistoryState?.isLoading}
           Component={MealCard}
+          marginBottom={"28px"}
         />
          
         <BrowseMoreButton
           onBrowseMoreClick={onBrowseMoreClick}
           hasBrowseMoreButton={hasBrowseMoreButton}
           isLoading={isLoading}
+          content="記録をもっと見る"
         />
         <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
       </StyledSubContainer>

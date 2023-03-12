@@ -25,14 +25,13 @@ const StyledContainer = styled.div`
 
 `;
 const DiaryCard = ({ data }: any) => {
-  console.log('diary', data);
+  // console.log('diary', data);
   const { date, text, time } = data || {};
 
   return (
     <StyledContainer>
       <div className="date">{date}</div>
       <div className="time">{time}</div>
-      {/* <div className="description">{text}</div> */}
       <div
         className="description"
         dangerouslySetInnerHTML={{

@@ -11,8 +11,8 @@ export const fetchMyRecord = createAsyncThunk(
     try {
       const { myRecord: myRecordURL } = API_URL();
       const response = await axios.get(myRecordURL);
-      console.log({isAppendList});
-      
+      console.log({ isAppendList });
+
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);
@@ -22,16 +22,18 @@ export const fetchMyRecord = createAsyncThunk(
 
 interface ViewingHistoryProps {
   myRecordList: any;
-  excerciseList:any
-  diaryRecord:any
+  excerciseList: any;
+  diaryRecord: any;
   isLoading: boolean;
+  totalDiary: number;
 }
 
 const initialState = {
   myRecordList: [],
   isLoading: true,
-  excerciseList:[],
-  diaryRecord:[]
+  excerciseList: [],
+  diaryRecord: [],
+  totalDiary: 0,
 } as ViewingHistoryProps;
 
 const myRecordSlice = createSlice({
@@ -44,14 +46,18 @@ const myRecordSlice = createSlice({
     });
 
     builder.addCase(fetchMyRecord.fulfilled, (state, { payload }) => {
-      const { data, isAppendList }:any = payload;
+      const { data, isAppendList }: any = payload;
       state.isLoading = false;
       state.excerciseList = data?.excerciseRecord;
-      state.diaryRecord = data?.diaryRecord;
+      state.totalDiary = data?.diaryRecord?.total;
+      state.myRecordList = data?.chart;
 
-      // If the myRecordList already have data and the boolean flag isAppendList = true
+      // If the diaryRecord already have data and the boolean flag isAppendList = true
       // then will append the list (use for browse more button)
-      state.myRecordList = state.myRecordList && isAppendList ? state.myRecordList?.concat(data?.chart) : data?.chart;
+      state.diaryRecord =
+        state.diaryRecord && isAppendList
+          ? state.diaryRecord?.concat(data?.diaryRecord?.diaryRecordList)
+          : data?.diaryRecord?.diaryRecordList;
     });
 
     builder.addCase(fetchMyRecord.rejected, (state) => {

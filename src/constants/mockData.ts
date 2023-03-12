@@ -492,11 +492,71 @@ const mockExcercise = {
   ],
 };
 
-
 const diary = [
   {
-    date:'2021.05.21',
-    time:'23:25',
-    text: "私の日記の記録が一部表示されます。<br/>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…"
-  }
-]
+    date: '2021.05.21',
+    time: '23:25',
+    text: '私の日記の記録が一部表示されます。<br/>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
+  },
+];
+
+const recommend = {
+  recommendList: [
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-1.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-2.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-3.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-4.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-5.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-6.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-7.jpg',
+    },
+    {
+      date: '2021.05.17',
+      time: '23:25',
+      text: '魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…',
+      supplements: ['魚料理', '和食', 'DHA'],
+      image: '/assets/images/column-8.jpg',
+    },
+  ],
+};

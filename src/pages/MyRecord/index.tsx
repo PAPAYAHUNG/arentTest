@@ -19,9 +19,16 @@ const StyledContainer = styled.div`
   margin: 0 auto;
 `;
 
+const StyledHeader = styled.div`
+  font-family: ${(props) => props.theme.typo.family.inter};
+  ${(props) => props.theme.typo.style.l4Header}
+  font-size: 22px;
+  line-height: 27px;
+`
+
 const MyRecord = () => {
   const { fetchMyRecord, myRecordState } = useMyRecordService();
-  const { myRecordList, isLoading, excerciseList, diaryRecord } =
+  const { myRecordList, isLoading, excerciseList, diaryRecord,totalDiary } =
     myRecordState || {};
   //   const { isLoading, total, mealHistoryList,notification } = mealHistoryState || {};
   useEffect(() => {
@@ -31,11 +38,13 @@ const MyRecord = () => {
   console.log({ myRecordState });
   //   console.log({ mealHistoryState });
 
+  const renderHeader = ()=> <StyledHeader>MY DIARY</StyledHeader>
+
   const onBrowseMoreClick = () => {
-    // fetchMealHistory({ isAppendList: true });
+    fetchMyRecord({ isAppendList: true });
   };
 
-  //   const hasBrowseMoreButton = !isLoading && mealHistoryList.length < total;
+    const hasBrowseMoreButton = !isLoading && diaryRecord.length < totalDiary;
   return (
     <Layout>
       <StyledContainer>
@@ -46,16 +55,17 @@ const MyRecord = () => {
           listItems={diaryRecord}
           fullData={excerciseList}
           isLoading={isLoading}
-          header="MY DIARY"
+          header={renderHeader()}
           Component={DiaryCard}
           marginTop="56px"
-          marginBottom='56px'
+          marginBottom='28px'
         />
-        {/* <BrowseMoreButton
+        <BrowseMoreButton
           onBrowseMoreClick={onBrowseMoreClick}
           hasBrowseMoreButton={hasBrowseMoreButton}
           isLoading={isLoading}
-        /> */}
+          content="自分の日記をもっと見る"
+        />
         <BackToTop offsetBottom={'528px'} offsetRight={'96px'} />
       </StyledContainer>
     </Layout>
