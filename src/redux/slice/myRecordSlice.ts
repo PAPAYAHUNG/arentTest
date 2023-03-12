@@ -11,8 +11,6 @@ export const fetchMyRecord = createAsyncThunk(
     try {
       const { myRecord: myRecordURL } = API_URL();
       const response = await axios.get(myRecordURL);
-      console.log({ isAppendList });
-
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);

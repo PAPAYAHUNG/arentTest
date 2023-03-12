@@ -2,6 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API_URL } from '../../constants/api';
 import Logger from '../../services/Logger';
+import { MealCardProps } from '../../pages/Home/components/MealCard';
 
 const sliceName = 'mealHistory';
 
@@ -20,7 +21,7 @@ export const fetchMealHistory = createAsyncThunk(
 );
 
 interface ViewingHistoryProps {
-  mealHistoryList: any;
+  mealHistoryList: MealCardProps[];
   total:number
   notification:number
   isLoading: boolean;

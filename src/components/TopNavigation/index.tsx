@@ -32,7 +32,11 @@ const StyledNavigator = styled.div`
   ${(props) => props.theme.typo.style.lHeader}
 
   .sub-container {
-    display: flex;
+    display: none;
+
+    @media screen and (min-width: 960px) {
+      display: flex;
+    }
   }
 `;
 
@@ -80,10 +84,15 @@ const StyledMenuButton = styled.div`
   display: 'flex';
   justify-content: center;
   align-items: center;
+  margin-right: 30px;
 
   &:hover {
     cursor: pointer;
   }
+
+  @media screen and (min-width: 960px) {
+    margin-right: unset;
+    }
 `;
 
 const StyledItemsContainer = styled.div`

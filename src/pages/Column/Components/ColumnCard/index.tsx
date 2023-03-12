@@ -15,6 +15,10 @@ const StyleWrapper = styled.div`
     display: flex;
     gap: 10px;
   }
+
+  &:hover{
+    cursor: pointer;
+  }
 `;
 
 const StyledSupplement = styled.div`
@@ -71,7 +75,7 @@ const ColumnCard = ({ data }: any) => {
       )),
     [supplements],
   );
-  
+
   return (
     <StyleWrapper>
       <StyledContainer>

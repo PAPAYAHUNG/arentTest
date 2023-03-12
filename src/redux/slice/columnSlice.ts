@@ -11,8 +11,6 @@ export const fetchColumn = createAsyncThunk(
     try {
       const { column: columnURL } = API_URL();
       const response = await axios.get(columnURL);
-      console.log({ isAppendList });
-
       return { ...response, isAppendList };
     } catch (error: any) {
       Logger.log(error);
